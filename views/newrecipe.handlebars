@@ -1,0 +1,44 @@
+<!-- Users adding a new custom recipe -->
+
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <title>Nerd Culinary Crafting</title>
+
+    <link rel='stylesheet' href='/css/style.css' />
+  </head>
+
+  <body>
+    <div class='flex-column justify-space-around'>
+      <header class=''>
+        <h1>
+         Create your new Recipe!
+        </h1>
+      </header>
+      <main class='container container-fluid mt-5'>
+        {{{body}}}
+        <div class="">
+            <form id="recipeForm">
+                <label for="recipeName">Recipe name:</label>
+                <input id="recipeName" name="rName" type="text" class="">
+                  <div class="container">
+                  <input id="ingredients">
+                  <button class="addIngredient" onClick="addFN()">+ Add Ingredient</button>
+                  <div id="inputFields"></div>
+                  </div>
+                <input id="instructionsBox" name="instructions" type="text" class="" placeholder="Enter recipe instructions...">
+                <label id="recipeTheme">Select Theme</label>
+                <select name="tag" id="themeTag">
+                    <option value="LOTR">The Lord of the Rings</option>
+                    <option value="HP">Harry Potter</option>
+                    <option value="SW">Star Wars</option>
+                    <option value="LoZ">Legend of Zelda</option>
+                </select>
+                <button type="button" id="submitBttn">Submit</button>
+            </form>
+        </div>
+      </main>
+    </div>
+  </body>
+
+</html>
