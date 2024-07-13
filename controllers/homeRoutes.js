@@ -2,37 +2,48 @@ const router = require('express').Router();
 const { Recipe, Theme, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', withAuth, async (req, res) => {
+
+
+  //router.get('/', async (req, res) => {
+   // try {
+      // Get all projects and JOIN with user data
+   //   const recipeData = await Recipe.findAll({
+    
+  //    });
+  
+      // Serialize data so the template can read it
+  //    const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
+  
+      // Pass serialized data and session flag into template
+  //    res.render('homepage', { 
+  //      recipes, 
+    //    logged_in: req.session.logged_in 
+   //   });
+   /// } catch (err) {
+   //   res.status(500).json(err);
+   // }
+  //});
+  
+  
+
+  router.get('/api/recipes/:id', async (req, res) => {
     try {
-      const userData = await User.findAll({
-        attributes: { exclude: ['password'] },
-        order: [['name', 'ASC']],
-      });
-  
-  
-      res.render('homepage', {
-
-      });
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
-
-  router.get('/recipes/:id', async (req, res) =>
-{
-     try {
         const recipeData = await Recipe.findByPk(req.params.id); 
-        const recipe = recipeData.get({ plain:true});
-        res.render('recipe', {
-            ...recipe,
-            logged_in: req.session.logged_in
-          });
-        } catch (err) {
-          res.status(500).json(err);
+        if (!recipeData) {
+            return res.status(404).send('Recipe not found');
         }
-    });
-
-    router.get('/themes', async (req, res) => {
+        
+        const recipe = recipeData.get({ plain: true });
+        res.render('recipe', {
+            recipe,
+            // logged_in: req.session.logged_in
+        });
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Internal Server Error');
+    }
+});
+ router.get('/themes', async (req, res) => {
         try {
             const themeData = await Theme.findAll();
     
