@@ -24,24 +24,33 @@ const withAuth = require('../utils/auth');
     }
   });
   
-  
-
-  router.get('/api/recipes/:id', async (req, res) => {
+  router.get('/api/recipes', async (req, res) => {
     try {
-        const recipeData = await Recipe.findByPk(req.params.id); 
-        if (!recipeData) {
-            return res.status(404).send('Recipe not found');
-        }
+        const recipeData = await Recipe.findAll();
         
-        const recipe = recipeData.get({ plain: true });
-        res.render('recipe', {
-            recipe,
-            // logged_in: req.session.logged_in
-        });
+        // Serialize data to JSON format
+        const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
+        
+        res.json(recipes);
     } catch (err) {
-        console.error(err);
-        res.status(500).send('Internal Server Error');
+        res.status(500).json(err);
     }
+});
+
+router.get('/api/recipes/:id', async (req, res) => {
+  try {
+    const recipeData = await Recipe.findByPk(req.params.id);
+    
+    if (!recipeData) {
+      return res.status(404).send('Recipe not found');
+    }
+
+    const recipe = recipeData.get({ plain: true });
+    res.json(recipe);
+  
+  } catch (err) {
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
 });
  router.get('/themes', async (req, res) => {
         try {

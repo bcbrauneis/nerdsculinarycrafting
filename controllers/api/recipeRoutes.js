@@ -8,6 +8,7 @@ router.post('/', async (req, res) => {
         description: req.body.description,
         ingredients: req.body.ingredients,
         instructions: req.body.instructions,
+        user_id: req.body.user_id
       });
       res.status(200).json(recipeData);
     } catch (err) {
