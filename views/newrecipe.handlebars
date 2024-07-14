@@ -1,17 +1,19 @@
 <!-- Users adding a new custom recipe -->
 
+const handlebars = require('handlebars');
+
 <html lang='en'>
   <head>
     <meta charset='UTF-8' />
     <title>Nerd Culinary Crafting</title>
 
-    <link rel='stylesheet' href='/css/style.css' />
+    <link rel='stylesheet' href='public/css/newRecipe.css' />
   </head>
 
   <body>
     <div class='flex-column justify-space-around'>
-      <header class=''>
-        <h1>
+      <header class='header'>
+        <h1 class="pixel-art">
          Create your new Recipe!
         </h1>
       </header>
@@ -19,11 +21,11 @@
         {{{body}}}
         <div class="">
             <form id="recipeForm">
-                <label for="recipeName">Recipe name:</label>
+                <label for="recipeName" class="title">Recipe name:</label>
                 <input id="recipeName" name="rName" type="text" class="">
                   <div class="container">
                   <input id="ingredients">
-                  <button class="addIngredient" onClick="addFN()">+ Add Ingredient</button>
+                  <button class="addBttn" onClick="addFN()">+ Add Ingredient</button>
                   <div id="inputFields"></div>
                   </div>
                 <input id="instructionsBox" name="instructions" type="text" class="" placeholder="Enter recipe instructions...">
@@ -32,7 +34,8 @@
                     <option value="LOTR">The Lord of the Rings</option>
                     <option value="HP">Harry Potter</option>
                     <option value="SW">Star Wars</option>
-                    <option value="LoZ">Legend of Zelda</option>
+                    <option value="LoZ">Stardew Valley</option>
+                    <option value="LoZ">Final Fantasy</option>
                 </select>
                 <button type="button" id="submitBttn">Submit</button>
             </form>
