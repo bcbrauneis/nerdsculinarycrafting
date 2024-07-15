@@ -1,21 +1,25 @@
 :root {
     --primary: #2d4a54;
     --secondary: #0c7475;
-    --tertiary: #bc4a9b;
-    --quatrinary: #eb8d9c;
+    --tertiary: #007F5F;
+    --quatrinary: #00E88A;
     --tan: #ffd8ba;
     --light: #ebebeb;
     --dark: #182c23;
+    --p: #BB96DC;
+    --d: #1B1145;
+    --gr: #B0ACB0;
+    --li: #e2dddf;
 }
 
 body{
     margin: 0;
-    background-color: var(--quatrinary);
+    background-color: var(--gr);
 }
 
 header{
     width: 100%;
-    background-color: var(--primary);
+    background-color: var(--d);
     margin: 0;
     text-align: center;
     font-size: 30px;
@@ -23,7 +27,7 @@ header{
 }
 
 .title{
-    color: var(--tan);
+    color: var(--li);
     margin: 0;
 }
 
