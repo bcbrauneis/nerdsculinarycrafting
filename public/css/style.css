@@ -1,8 +1,33 @@
 :root {
-    --primary: #389393;
-    --secondary: #f5a25d;
-    --tertiary: #fa7f72;
-    --quatrinary: #6c6b67;
+    --primary: #2d4a54;
+    --secondary: #0c7475;
+    --tertiary: #bc4a9b;
+    --quatrinary: #eb8d9c;
+    --tan: #ffd8ba;
     --light: #ebebeb;
     --dark: #182c23;
+}
+
+body{
+    margin: 0;
+    background-color: var(--quatrinary);
+}
+
+header{
+    width: 100%;
+    background-color: var(--primary);
+    margin: 0;
+    text-align: center;
+    font-size: 30px;
+    height: 75px;
+}
+
+.title{
+    color: var(--tan);
+    margin: 0;
+}
+
+.btn {
+    background-color: var(--secondary);
+    color: var(--light);
 }
