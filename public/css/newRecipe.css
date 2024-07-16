@@ -97,10 +97,13 @@ margin-left: 30px;
     font-size: 16px;
     font-family: fantasy;
     text-align: center;
+    width: 185px;
+    height: 30px;
+    vertical-align: middle;
 }
 
 #submitBttn {
-    margin-left: 495px;
+    margin-left: 485px;
     cursor: pointer;
     text-align: center;
     font-size: 16px;
