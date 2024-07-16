@@ -1,8 +1,37 @@
 :root {
-    --primary: #389393;
-    --secondary: #f5a25d;
-    --tertiary: #fa7f72;
-    --quatrinary: #6c6b67;
+    --primary: #2d4a54;
+    --secondary: #0c7475;
+    --tertiary: #007F5F;
+    --quatrinary: #00E88A;
+    --tan: #ffd8ba;
     --light: #ebebeb;
     --dark: #182c23;
+    --p: #BB96DC;
+    --d: #1B1145;
+    --gr: #B0ACB0;
+    --li: #e2dddf;
+}
+
+body{
+    margin: 0;
+    background-color: var(--gr);
+}
+
+header{
+    width: 100%;
+    background-color: var(--d);
+    margin: 0;
+    text-align: center;
+    font-size: 30px;
+    height: 75px;
+}
+
+.title{
+    color: var(--li);
+    margin: 0;
+}
+
+.btn {
+    background-color: var(--secondary);
+    color: var(--light);
 }
