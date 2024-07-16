@@ -1,13 +1,11 @@
-<!-- Users adding a new custom recipe -->
+<link rel='stylesheet' href='public/css/newRecipe.css' />
 
-const handlebars = require('handlebars');
+<!-- Users adding a new custom recipe -->
 
 <html lang='en'>
   <head>
     <meta charset='UTF-8' />
     <title>Nerd Culinary Crafting</title>
-
-    <link rel='stylesheet' href='public/css/newRecipe.css' />
   </head>
 
   <body>
@@ -19,23 +17,26 @@ const handlebars = require('handlebars');
       </header>
       <main class='container container-fluid mt-5'>
         {{{body}}}
-        <div class="">
+        <div class="section">
+            {{#if logged_in}}
             <form id="recipeForm">
-                <label for="recipeName" class="title">Recipe name:</label>
-                <input id="recipeName" name="rName" type="text" class="">
+                <label for="recipeName" id="title">Recipe name:</label>
+                <input id="recipeName" name="rName" type="text" class="recipeName">
                   <div class="container">
                   <input id="ingredients">
                   <button class="addBttn" onClick="addFN()">+ Add Ingredient</button>
                   <div id="inputFields"></div>
                   </div>
-                <input id="instructionsBox" name="instructions" type="text" class="" placeholder="Enter recipe instructions...">
+                <div class="ins-container"> 
+                <input id="instructionsBox" name="instructions" type="text" placeholder="Enter recipe instructions...">
+                </div> 
                 <label id="recipeTheme">Select Theme</label>
                 <select name="tag" id="themeTag">
                     <option value="LOTR">The Lord of the Rings</option>
                     <option value="HP">Harry Potter</option>
                     <option value="SW">Star Wars</option>
-                    <option value="LoZ">Stardew Valley</option>
-                    <option value="LoZ">Final Fantasy</option>
+                    <option value="SV">Stardew Valley</option>
+                    <option value="FF">Final Fantasy</option>
                 </select>
                 <button type="button" id="submitBttn">Submit</button>
             </form>
