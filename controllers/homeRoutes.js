@@ -13,7 +13,8 @@ const withAuth = require('../utils/auth');
   
        //Serialize data so the template can read it
       const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
-  
+      const weekRecipe = Math.floor(Math.random() * recipes.length)
+      console.log(weekRecipe);
       //Pass serialized data and session flag into template
       res.render('homepage', { 
        recipes, 
