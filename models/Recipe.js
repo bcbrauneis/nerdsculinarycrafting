@@ -34,13 +34,20 @@ Recipe.init(
             model: 'user',
             key: 'id'
           }
+        },
+        theme_id: {
+            type: DataTypes.STRING,
+            reference: {
+                model: 'theme',
+                key: 'id'
+            }
         }
       },
       {
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'dish',
+        modelName: 'recipe',
       }
     );
     
