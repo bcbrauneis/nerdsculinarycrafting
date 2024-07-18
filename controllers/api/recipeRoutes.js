@@ -23,7 +23,7 @@ router.get('/:id', async (req, res) => {
     }
 
     const recipe = recipeData.get({ plain: true });
-    res.render('recipe', { recipe }); 
+    res.json(recipe);
   } catch (err) {
     res.status(500).json({ error: 'Internal Server Error' });
   }

@@ -5,7 +5,8 @@
         "ingredients": "1/2 c flour, 2 tbsp water, handfull of seeds",
         "instructions": "mix together into a paste and bake at 350 for 10 minutes",
         "user_id" : 1,
-        "theme_id" : 2
+        "theme_id" : 2,
+        "isWinner": true
     },
     {
         "recipe_name": "Pumpkin Juice",
@@ -13,6 +14,7 @@
         "ingredients": "1/2 c pumpkin, 1 cup apple juice, sprinkle of cinnamon",
         "instructions": "shake in a jar with ice and strain. serve with a pumpkin pastie",
         "user_id" : 1,
-        "theme_id" : 5
+        "theme_id" : 5,
+        "isWinner": false
     }
 ]

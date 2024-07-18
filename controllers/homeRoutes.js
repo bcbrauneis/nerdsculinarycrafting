@@ -33,6 +33,19 @@ const withAuth = require('../utils/auth');
   
     res.render('login');
   });
-  
+
+  router.get('/newrecipe', (req, res) => {
+    try {
+      if (req.session.logged_in) {
+        res.render('newrecipe');
+      } else {
+        // Handle the case when the user is not logged in
+        res.redirect('/login'); // Redirect to the login page or handle it as needed
+      }
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+ 
   module.exports = router;
   
