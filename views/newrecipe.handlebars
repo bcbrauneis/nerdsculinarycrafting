@@ -12,8 +12,8 @@
 
   <body>
     <div class='flex-column justify-space-around'>
-      <header class='header'>
-        <h1 class="pixel-art">
+      <header>
+        <h1 class="header">
          Create your new Recipe!
         </h1>
       </header>
@@ -24,12 +24,18 @@
             <form id="recipeForm">
                 <label for="recipeName" id="title">Recipe Name:</label>
                 <input id="recipeName" name="rName" type="text" class="recipeName">
-                  <div class="container">
-                  <button class="addBttn" type="button" onClick="addFN()">+ Add Ingredient</button>
-                  <textarea></textarea>
-                  <span id="ingredients"></span>
-                  <div id="inputFields"></div>
+                <div class="icon" >
+                    <textarea class="inputIngredient" placeholder="+ Add Ingredient..."></textarea>
+                    <button type="button" class="btn btn-outline-light btn-sm save-ingredient">
+                        <span class="fas fa-save"></span>
+                        <span>Save Ingredient</span>
+                    </button>
+                    <div class="row">
+                      <div class="col-4 list-container" id="list-container">
+                        <ul class="list-ingredient" id="list-ingredient"></ul>
+                      </div>
                   </div>
+                </div>
                 <div class="ins-container"> 
                 <input id="instructionsBox" name="instructions" type="text" placeholder="Enter recipe instructions...">
                 </div> 
