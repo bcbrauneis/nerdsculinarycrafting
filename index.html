@@ -1,8 +1,4 @@
-
 <link rel='stylesheet' href='public/css/newRecipe.css' />
-
-<!-- Users adding a new custom recipe -->
-
 
 <html lang='en'>
   <head>
@@ -26,13 +22,17 @@
                 <input id="recipeName" name="rName" type="text" class="recipeName">
                   <div class="container">
                   <button class="addBttn" type="button" onClick="addFN()">+ Add Ingredient</button>
-                  <textarea></textarea>
                   <span id="ingredients"></span>
+                  <textarea></textarea>
                   <div id="inputFields"></div>
                   </div>
                 <div class="ins-container"> 
                 <input id="instructionsBox" name="instructions" type="text" placeholder="Enter recipe instructions...">
                 </div> 
+                <div class="picture-upload">
+                    <label for="recipe-pic">Upload a picture of your recipe here!</label>
+                    <input type="file" class="recipe-pic" accept="image/*" id="recipe-pic" name="recipe-pic">
+                </div>
                 <label id="recipeTheme">Select Theme</label>
                 <select name="tag" id="themeTag">
                     <option value="LOTR">The Lord of the Rings</option>
@@ -42,14 +42,8 @@
                     <option value="FF">Final Fantasy</option>
                 </select>
                 <button type="button" id="submitBttn">Submit</button>
-                 <div class="picture-upload">
-                    <label for="recipe-pic">Upload a picture of your recipe here!</label>
-                    <input type="file" class="recipe-pic" accept="image/*" id="recipe-pic" name="recipe-pic">
-                </div>
             </form>
         </div>
       </main>
     </div>
   </body>
-
-</html>
