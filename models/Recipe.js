@@ -36,12 +36,17 @@ Recipe.init(
           }
         },
         theme_id: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             reference: {
                 model: 'theme',
                 key: 'id'
             }
+        },
+        isWinner: {
+            type: DataTypes.BOOLEAN,
+          
         }
+
       },
       {
         sequelize,
