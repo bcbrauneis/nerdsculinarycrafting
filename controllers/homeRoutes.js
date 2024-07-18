@@ -52,7 +52,8 @@ router.get('/api/recipes/:id', async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
- router.get('/themes', async (req, res) => {
+
+router.get('/themes', async (req, res) => {
         try {
             const themeData = await Theme.findAll();
     
