@@ -16,6 +16,12 @@ Theme.init(
             allowNul: false, 
            }
         
-    }
+    },
+    {
+        sequelize,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'recipe',
+      }
 );
 module.exports = Theme;
