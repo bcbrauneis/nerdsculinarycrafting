@@ -29,14 +29,30 @@ Recipe.init(
           allowNull: false,
         }, 
         user_id: {
-          type: DataTypes.STRING,
+          type: DataTypes.INTEGER,
+          reference: {
+            model: 'user',
+            key: 'id'
+          }
+        },
+        theme_id: {
+            type: DataTypes.INTEGER,
+            reference: {
+                model: 'theme',
+                key: 'id'
+            }
+        },
+        isWinner: {
+            type: DataTypes.BOOLEAN,
+          
         }
+
       },
       {
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'dish',
+        modelName: 'recipe',
       }
     );
     
