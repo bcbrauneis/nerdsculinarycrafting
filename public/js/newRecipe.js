@@ -188,7 +188,19 @@ const hide = (elem) => {
             theme: themeList.value,
             picture: pictureFile.value,
         }
-        localStorage.setItem('submitRecipe', JSON.stringify(submitRecipe));
-        console.log(submitRecipe);
     });
     
+    // handle form submission to be stored in recipeseeds.json
+    function handleSubmit(event) {
+        event.preventDefault();
+
+        const data = new recipeForm(event.target);
+
+        const value = data.get('recipeForm');
+
+        console.log({ value });
+    }
+
+    const form = document.querySelector('recipeForm');
+    form.addEventListener('submit', handleSubmit);
+
