@@ -1,11 +1,13 @@
-    <link rel='stylesheet' href='/public/css/category.css' />
+<link rel='stylesheet' href='/public/css/category.css' />
 <div>
     <div>
-    <h2>(Page Name) Recipes</h2>
+        <h2>{{pageName}} Recipes</h2>
     </div>
     <div>
         <ul>
-            <!-- place for all the recipes to be shown-->
+            {{#each recipes}}
+                <li>{{this.recipeName}} - {{this.description}}</li>
+            {{/each}}
         </ul>
     </div>
 </div>

@@ -2,13 +2,13 @@ const router = require('express').Router();
 const { Recipe, Theme, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-
-
   router.get('/', async (req, res) => {
    try {
   
       const recipeData = await Recipe.findAll({
-    
+        where: {
+          isWinner: true }
+        
      });
   
        //Serialize data so the template can read it
@@ -24,45 +24,7 @@ const withAuth = require('../utils/auth');
     }
   });
   
-  router.get('/api/recipes', async (req, res) => {
-    try {
-        const recipeData = await Recipe.findAll();
-        
-        // Serialize data to JSON format
-        const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
-        
-        res.json(recipes);
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
 
-router.get('/api/recipes/:id', async (req, res) => {
-  try {
-    const recipeData = await Recipe.findByPk(req.params.id);
-    
-    if (!recipeData) {
-      return res.status(404).send('Recipe not found');
-    }
-
-    const recipe = recipeData.get({ plain: true });
-    res.json(recipe);
-  
-  } catch (err) {
-    res.status(500).json({ error: 'Internal Server Error' });
-  }
-});
-
-router.get('/themes', async (req, res) => {
-        try {
-            const themeData = await Theme.findAll();
-    
-            res.render('themes', { themes: themeData, logged_in: req.session.logged_in });
-        } catch (err) {
-            res.status(500).json(err); 
-        }
-    });
-  
   router.get('/login', (req, res) => {
     if (req.session.logged_in) {
       res.redirect('/');
@@ -71,6 +33,19 @@ router.get('/themes', async (req, res) => {
   
     res.render('login');
   });
-  
+
+  router.get('/newrecipe', (req, res) => {
+    try {
+      if (req.session.logged_in) {
+        res.render('newrecipe');
+      } else {
+        // Handle the case when the user is not logged in
+        res.redirect('/login'); // Redirect to the login page or handle it as needed
+      }
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+ 
   module.exports = router;
   

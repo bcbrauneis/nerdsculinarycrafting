@@ -21,7 +21,7 @@ Theme.init(
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'recipe',
+        modelName: 'theme',
       }
 );
 module.exports = Theme;
