@@ -115,7 +115,8 @@ margin-top: 20px;
 }
 
 #submitBttn {
-    margin-left: 485px;
+    margin-top: -75px;
+    margin-left: 800px;
     cursor: pointer;
     text-align: center;
     font-size: 16px;
