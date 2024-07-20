@@ -35,7 +35,7 @@ const loginFormHandler = async (event) => {
   console.log('First Name:', firstname);
   console.log('Username:', username);
   console.log('Password:', password);
-  // console.log('Confirm:', confirm);
+  console.log('Confirm:', confirm);
   
     if (firstname && username && password) {
       const response = await fetch('/api/users', {
