@@ -1,5 +1,5 @@
 # nerdsculinarycrafting
-A website for nerd to upload their take on pop culture and videogame recipes.
+A website for nerds to upload their take on pop culture and videogame recipes.
 
 ## User Story
 

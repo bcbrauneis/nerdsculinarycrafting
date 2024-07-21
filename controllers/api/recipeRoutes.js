@@ -30,17 +30,20 @@ router.get('/:id', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
+
+  console.log(req.body)
     try {
       const recipeData = await Recipe.create({
         recipe_name: req.body.recipe_name,
-        description: req.body.description,
+        // description: req.body.description,
         ingredients: req.body.ingredients,
         instructions: req.body.instructions,
-        user_id: req.body.user_id,
+        user_id: req.session.user_id,
         theme_id: req.body.user_id
       });
       res.status(200).json(recipeData);
     } catch (err) {
+      console.log(err)
       res.status(400).json(err);
     }
   });
