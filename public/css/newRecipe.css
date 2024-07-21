@@ -62,21 +62,17 @@ padding-top: 5%;
 margin-top: 20px;
 }
 
-.Ingredient-textarea{
-
-    vertical-align: center;
-    border-radius: 15px;
-    font-size: 13px;
-    width: 20%;
-    position: absolute;
-    
+.ingredientTitle {
+   font-size: 16px;
 }
 
 .btn {
-    border-radius: 10px;
+    border-radius: 20px;
     margin-left: 10px;
     margin-top: 10px;
     position: absolute;
+    font-size: 18px;
+    background-color: white;
 }
 
 .row {
@@ -84,28 +80,38 @@ margin-top: 20px;
 }
 
 .container {
+    margin: auto;
+    padding: 20px 20px;
     padding-top: 5%;
     height: 350px;
 }
 
+
 #instructionsBox {
-    width: 80%;
-    height: 300px;
-    vertical-align: text-top;
-    
+    width: 95%;
+    height: 290px;
+    vertical-align: top;
+    border-style: solid;
+    border-color: var(--secondary);
+    border-radius: 40px;
+    font-size: 20px;
+    text-align: center;
 }
 
 .picture-upload{
     height: 50px;
+    margin-left: 20px;
 }
 
 #recipeTheme{
+    margin-left: 20px;
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
     margin-bottom: 10px;
 }
 
 #themeTag {
+    margin-left: 10px;
     font-size: 16px;
     font-family: fantasy;
     text-align: center;
@@ -116,7 +122,7 @@ margin-top: 20px;
 
 #submitBttn {
     margin-top: -75px;
-    margin-left: 800px;
+    margin-left: 90%;
     cursor: pointer;
     text-align: center;
     font-size: 16px;

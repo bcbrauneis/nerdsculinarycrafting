@@ -1,44 +1,37 @@
-
-<link rel='stylesheet' href='public/css/newRecipe.css' />
+<link rel='stylesheet' href='/css/newRecipe.css' />
 
 <!-- Users adding a new custom recipe -->
 
 
-<html lang='en'>
-  <head>
-    <meta charset='UTF-8' />
-    <title>Nerd Culinary Crafting</title>
-  </head>
-
-  <body>
-    <div class='flex-column justify-space-around'>
-      <header>
+<div class='flex-column justify-space-around'>
+    <header>
         <h1 class="header">
-         Create your new Recipe!
+            Create your new Recipe!
         </h1>
-      </header>
-      <main class='container container-fluid mt-5'>
-        {{{body}}}
+    </header>
+    <main class='container container-fluid mt-5'>
         <div class="section">
-            {{#if logged_in}}
             <form id="recipeForm">
                 <label for="recipeName" id="title">Recipe Name:</label>
                 <input id="recipeName" name="rName" type="text" class="recipeName">
-                <div class="icon" >
+                <div class="icon">
                     <textarea class="inputIngredient" id="ingredientTitle" placeholder="+ Add Ingredient..."></textarea>
-                    <button type="button" class="btn btn-outline-light btn-sm save-ingredient">
+                    <button id="addBtn" type="button" class="btn btn-outline-light btn-sm save-ingredient">
                         <span class="fas fa-save"></span>
                         <span>Save Ingredient</span>
                     </button>
                     <div class="row">
-                      <div class="col-4 list-container" id="list-container">
-                        <ul class="list-ingredient" id="list-ingredient"></ul>
-                      </div>
-                  </div>
+                        <div class="col-4 list-container" id="list-container">
+                            <ul class="list-ingredient" id="list-ingredient">
+
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="ins-container"> 
-                <input id="instructionsBox" name="instructions" type="text" placeholder="Enter recipe instructions...">
-                </div> 
+                <div class="ins-container">
+                    <input id="instructionsBox" name="instructions" type="text"
+                        placeholder="Enter recipe instructions...">
+                </div>
                 <label id="recipeTheme">Select Theme</label>
                 <select name="tag" id="themeTag">
                     <option value="LOTR">The Lord of the Rings</option>
@@ -47,16 +40,13 @@
                     <option value="SV">Stardew Valley</option>
                     <option value="FF">Final Fantasy</option>
                 </select>
-                 <div class="picture-upload">
+                <div class="picture-upload">
                     <label for="recipe-pic">Upload a picture of your recipe here!</label>
                     <input type="file" class="recipe-pic" accept="image/*" id="recipe-pic" name="recipe-pic">
                 </div>
                 <button type="button" id="submitBttn">Submit</button>
             </form>
         </div>
-      </main>
-    </div>
-    <script src="/public/js/newRecipe.js" ></script>
-  </body>
-
-</html>
+    </main>
+</div>
+<script src="/js/addRecipe.js"></script>
