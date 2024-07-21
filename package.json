@@ -41,10 +41,12 @@
     "express-session": "^1.17.1",
 
     "pg": "^8.11.3",
+    "sequelize": "^6.3.5",
+     "handlebars": "^4.7.8"
+  }
 
-    "sequelize": "^6.3.5"
 
   }
 
-}
+
 

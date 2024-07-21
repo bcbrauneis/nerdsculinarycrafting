@@ -1,4 +1,5 @@
-const { add } = require("lodash");
+
+
 
 let recipeForm;
 let recipeName;
@@ -10,6 +11,8 @@ let instructions;
 let themeList;
 let pictureFile;
 let submitBttn;
+
+
 
 //enter path route
 if (window.location.pathname === '/') {
@@ -33,7 +36,7 @@ const show = (elem) => {
 // Hide and element
 const hide = (elem) => {
     elem.style.display = 'none';
-}
+};
 
 //activeIngredient is used to keep track of the ingredients in the ingredient list area
  let activeIngredient = {};
@@ -101,15 +104,19 @@ const hide = (elem) => {
     // Render the list of ingredient titles
     const renderIngredList = async (ingredient) => {
         let jsonIngredient = await ingredient.json();
+        let ingredListItems = [];
+
         // Get correct path route
         if (window.location.pathname === '/') {
             ingredientList.forEach((el) => (el.innerHTML = ''));
+
+            if (jsonIngredient.length === 0 ) {
+                ingredListItems.push(createLi('No ingredients saved', false));
+            }
         }
 
-        let ingredListItems = [];
-
         //returns HTML element 
-        const createLi = (title, savebtn = true) => {
+        const createLi = (addIngredient, saveIngredientBtn = true) => {
             const liEl = document.createElement('li');
             liEl.classList.add('list-ingred-title');
 
@@ -117,21 +124,30 @@ const hide = (elem) => {
             // const spanEl = document.createElement('span');
 
             //is this correct?
-            liEl.append;
-        }
+            liEl.append;(childElement);
+
+            return liEl;
+        };
+
         return liEl;
+
     };
 
-    if (jsonIngredient.length === 0 ) {
+    let jsonIngredient = [];
+    let ingredListItems = [];
+
+    if (jsonIngredient.length > 0) {
+        jsonIngredient.forEach((ingredient) => {
+            const li = createLi(ingredient.title);
+            li.dataset.ingredient = JSON.stringify(ingredient);
+
+            ingredListItems.push(li);
+        });
+    } else {
         ingredListItems.push(createLi('No ingredients saved', false));
     }
 
-    jsonIngredient.forEach((ingredient) => {
-        const li = createLi(ingredient.title);
-        li.dataset.ingredient = JSON.stringify(ingredient);
-
-        ingredListItems.push(li);
-    });
+    console.log(jsonIngredient);
 
     //Get route path
     if (window.location.pathname === '/') {
@@ -147,4 +163,44 @@ const hide = (elem) => {
 
     getAndRender();
 
+
+    // New recipe form handler
+    recipeForm.addEventListener('submit', (e) => {
+        let recipe = [];
+        if(recipeName.value === '' || recipeName.value == null) {
+            messages.push('Recipe name required'); 
+        }
+        if(messages.length > 0) {
+            e.preventDefault();
+            errorEl.innerText = messages.join(',');
+        }
+    });
+
+
+    // submit bttn event listener
+    submitBttn.addEventListener('click', function (event) {
+        event.preventDefault();
+        //create object to store data
+        const submitRecipe = {
+            title: recipeName.value,
+            ingredients: ingredientList.value,
+            instructions: instructions.value.trim(),
+            theme: themeList.value,
+            picture: pictureFile.value,
+        }
+    });
     
+    // handle form submission to be stored in recipeseeds.json
+    function handleSubmit(event) {
+        event.preventDefault();
+
+        const data = new recipeForm(event.target);
+
+        const value = data.get('recipeForm');
+
+        console.log({ value });
+    }
+
+    const form = document.querySelector('recipeForm');
+    form.addEventListener('submit', handleSubmit);
+
