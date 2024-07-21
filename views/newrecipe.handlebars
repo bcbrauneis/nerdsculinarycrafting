@@ -1,52 +1,63 @@
-<link rel='stylesheet' href='/css/newRecipe.css' />
 
-<!-- Users adding a new custom recipe -->
+<!-- Example of Handlebars expressions in HTML code -->
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <title>Nerd Culinary Crafting</title>
+  </head>
 
-
-<div class='flex-column justify-space-around'>
-    <header>
+  <body>
+    <div class='flex-column justify-space-around'>
+      <header>
         <h1 class="header">
-            Create your new Recipe!
+          Create your new Recipe!
+
         </h1>
     </header>
     <main class='container container-fluid mt-5'>
         <div class="section">
-            <form id="recipeForm">
-                <label for="recipeName" id="title">Recipe Name:</label>
-                <input id="recipeName" name="rName" type="text" class="recipeName">
-                <div class="icon">
-                    <textarea class="inputIngredient" id="ingredientTitle" placeholder="+ Add Ingredient..."></textarea>
-                    <button id="addBtn" type="button" class="btn btn-outline-light btn-sm save-ingredient">
-                        <span class="fas fa-save"></span>
-                        <span>Save Ingredient</span>
-                    </button>
-                    <div class="row">
-                        <div class="col-4 list-container" id="list-container">
-                            <ul class="list-ingredient" id="list-ingredient">
 
-                            </ul>
-                        </div>
-                    </div>
+          {{#if logged_in}}
+          <form id="recipeForm">
+            <label for="recipeName" id="title">Recipe Name:</label>
+            <input id="recipeName" name="rName" type="text" class="recipeName">
+            <div class="icon">
+              <textarea class="inputIngredient" id="ingredientTitle" placeholder="+ Add Ingredient..."></textarea>
+              <button type="button" class="btn btn-outline-light btn-sm save-ingredient">
+                <span class="fas fa-save"></span>
+                <span>Save Ingredient</span>
+              </button>
+              <div class="row">
+                <div class="col-4 list-container" id="list-container">
+                  <ul class="list-ingredient" id="list-ingredient">
+                    {{#each ingredients}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                  </ul>
                 </div>
-                <div class="ins-container">
-                    <input id="instructionsBox" name="instructions" type="text"
-                        placeholder="Enter recipe instructions...">
-                </div>
-                <label id="recipeTheme">Select Theme</label>
-                <select name="tag" id="themeTag">
-                    <option value="LOTR">The Lord of the Rings</option>
-                    <option value="HP">Harry Potter</option>
-                    <option value="SW">Star Wars</option>
-                    <option value="SV">Stardew Valley</option>
-                    <option value="FF">Final Fantasy</option>
-                </select>
-                <div class="picture-upload">
-                    <label for="recipe-pic">Upload a picture of your recipe here!</label>
-                    <input type="file" class="recipe-pic" accept="image/*" id="recipe-pic" name="recipe-pic">
-                </div>
-                <button type="button" id="submitBttn">Submit</button>
-            </form>
+              </div>
+            </div>
+            <div class="ins-container">
+              <input id="instructionsBox" name="instructions" type="text" placeholder="Enter recipe instructions...">
+            </div>
+            <label id="recipeTheme">Select Theme</label>
+            <select name="tag" id="themeTag">
+              {{#each themes}}
+              <option value="{{this}}">{{this}}</option>
+              {{/each}}
+            </select>
+            <button type="button" id="submitBttn">Submit</button>
+            <div class="picture-upload">
+              <label for="recipe-pic">Upload a picture of your recipe here!</label>
+              <input type="file" class="recipe-pic" accept="image/*" id="recipe-pic" name="recipe-pic">
+            </div>
+          </form>
+          {{else}}
+          <p>Please log in to access this feature.</p>
+          {{/if}}
         </div>
-    </main>
-</div>
-<script src="/js/addRecipe.js"></script>
+      </main>
+    </div>
+  </body>
+</html>
+
