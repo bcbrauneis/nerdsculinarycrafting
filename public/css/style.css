@@ -13,9 +13,11 @@
 }
 
 body{
-    margin: 0;
-    background-color: var(--gr);
-}
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      margin: 0;
+      background-color: var(--gr);
+      display: flexbox;
+  }
 
 header{
     width: 100%;
