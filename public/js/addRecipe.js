@@ -1,3 +1,5 @@
+
+
 const addIngredientBtn = document.querySelector("#addBtn")
 const ingredientTitleTextArea = document.querySelector("#ingredientTitle");
 const listIngredientUl = document.querySelector("#list-ingredient")
@@ -14,19 +16,33 @@ function addToList() {
 }
 
 function saveRecipeToDb() {
-   fetch("/api/recipes/", {
+   fetch("/api/Recipe/", {
     method: "POST",
     body: JSON.stringify({
         recipe_name: "",
         description: "req.body.description",
         ingredients: "",
-        instructions: req.body.instructions,
-        user_id: req.body.user_id,
-        theme_id: req.body.user_id
-    })
+        instructions: "",
+        user_id: "",
+        theme_id: ""
+    }),
+    headers: {
+        "Content-Type": "applcation/json"
+    }
    })
-   .then()
-   .then()
+   .then(response => {
+    if (response.ok) {
+        return response.json();
+    } else {
+        throw new Error("Failed to save recipe");
+    }
+   })
+   .then(data => {
+    console.log("Recipe saved successfully", data);
+   })
+   .catch(error => {
+    console.error("Error saving recipe", error);
+   });
 }
 
 addIngredientBtn.addEventListener("click", addToList)
