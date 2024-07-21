@@ -47,6 +47,7 @@ const withAuth = require('../utils/auth');
     }
   });
 
+
   router.get('/recipes/:id', async (req, res) => {
     try {
       const recipeData = await Recipe.findByPk(req.params.id, {
@@ -68,5 +69,6 @@ const withAuth = require('../utils/auth');
       res.status(500).json({ error: 'Internal Server Error' });
     }
   });
+
   module.exports = router;
   

@@ -2,11 +2,13 @@
 <html lang="en">
 
 
+
 <head>
   <meta charset='UTF-8' />
   <title>Nerd Culinary Crafting</title>
   <link rel='stylesheet' href='/css/style.css' />
 </head>
+
 
   <body>
     <div class=''>
@@ -14,6 +16,7 @@
         <h1 class='title'>
          Nerds Culinary Crafting
         </h1>
+
            <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
@@ -22,6 +25,7 @@
         <a href="/login">login</a>
         {{/if}}
       </nav>
+
       </header>
       <main class=''>
         {{{body}}}
