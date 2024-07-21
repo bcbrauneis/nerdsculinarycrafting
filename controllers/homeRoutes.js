@@ -12,11 +12,11 @@ const withAuth = require('../utils/auth');
      });
   
        //Serialize data so the template can read it
-      const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
-  
+      const recipe = recipeData[0].get({ plain: true });
+
       //Pass serialized data and session flag into template
       res.render('homepage', { 
-       recipes, 
+       recipe,
        logged_in: req.session.logged_in 
       });
     } catch (err) {
@@ -46,6 +46,27 @@ const withAuth = require('../utils/auth');
       res.status(500).json(err);
     }
   });
- 
+
+  router.get('/recipes/:id', async (req, res) => {
+    try {
+      const recipeData = await Recipe.findByPk(req.params.id, {
+        include: [
+          {
+            model: User,
+            attributes: ['firstname'],
+          },
+        ],
+      });
+      
+      if (!recipeData) {
+        return res.status(404).send('Recipe not found');
+      }
+  
+      const recipe = recipeData.get({ plain: true });
+      res.render('recipe', { recipe , logged_in: req.session.logged_in});
+    } catch (err) {
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
+  });
   module.exports = router;
   
