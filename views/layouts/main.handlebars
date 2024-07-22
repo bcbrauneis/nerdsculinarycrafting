@@ -1,36 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
-
-
+<html lang='en'>
 
 <head>
   <meta charset='UTF-8' />
   <title>Nerd Culinary Crafting</title>
+
   <link rel='stylesheet' href='/css/style.css' />
 </head>
 
-
-  <body>
-    <div class=''>
-      <header class='header'>
-        <h1 class='title'>
-         Nerds Culinary Crafting
-        </h1>
-
-           <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-      </nav>
-
-      </header>
-      <main class=''>
-        {{{body}}}
-      </main>
-    </div>
+<body>
+  <div class=''>
+    <header class='header'>
+      <h1 class='title'>
+        Nerds Culinary Crafting
+      </h1>
+      {{#if logged_in}}
+        <button class="logout button-35-logout" type="button" href="/views/login.handlebars">Logout</button>
+        <button class="home button-35-home" type="button" href="/views/homepage.handlebars">Home</button>
+      {{/if}}
+    </header>
+    <main class=''>
+      {{{body}}}
+    </main>
+  </div>
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
