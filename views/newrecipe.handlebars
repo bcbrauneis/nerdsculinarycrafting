@@ -39,26 +39,29 @@
                     {{/each}}
                   </ul>
                 </div>
-              </div>
-            </div>
-            <div class="ins-container">
-              <input id="instructionsBox" name="instructions" type="text" placeholder="Enter recipe instructions...">
-            </div>
-            <label id="recipeTheme">Select Theme</label>
-            <select name="tag" id="themeTag">
-              {{#each themes}}
-              <option value="{{this}}">{{this}}</option>
-              {{/each}}
-            </select>
-            <button type="button" id="submitBttn">Submit</button>
-            <div class="picture-upload">
-              <label for="recipe-pic">Upload a picture of your recipe here!</label>
-              <input type="file" class="recipe-pic" accept="image/*" id="recipe-pic" name="recipe-pic">
-            </div>
-          </form>
-          {{else}}
-          <p>Please log in to access this feature.</p>
-          {{/if}}
+
+                <label id="recipeTheme">Select Theme</label>
+                <select name="tag" id="themeTag">
+                    <option value="LOTR">The Lord of the Rings</option>
+                    <option value="HP">Harry Potter</option>
+                    <option value="SW">Star Wars</option>
+                    <option value="SV">Stardew Valley</option>
+                    <option value="FF">Final Fantasy</option>
+                </select>
+                {{!-- <div class="picture-upload">
+                    <label for="recipe-pic">Upload a picture of your recipe here!</label>
+                    <input type="file" class="recipe-pic" accept="image/*" id="recipe-pic" name="recipe-pic">
+                </div> --}}
+                <button type="button" id="submitBttn">Submit</button>
+            </form>
+
+
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <label for="recipe-pic">Upload a picture of your recipe here!</label>
+                <input type="file" name="avatar" />
+                <button>Upload Photo</button>
+            </form>
+
         </div>
       </main>
     </div>
