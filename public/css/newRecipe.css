@@ -55,6 +55,7 @@ margin-left: 30px;
     font-size: 18px;
     font-family: fantasy;
     text-align: center;
+    color: var(--secondary);
 }
 
 .icon {
@@ -86,16 +87,25 @@ margin-top: 20px;
     height: 350px;
 }
 
+#list-ingredient {
+    list-style-type:georgian;
+    color: var(--secondary);
+    font-size: 20px;
+}
+
 
 #instructionsBox {
     width: 95%;
     height: 290px;
+    text-wrap: balance;
+    word-wrap: break-word;
     vertical-align: top;
     border-style: solid;
     border-color: var(--secondary);
     border-radius: 40px;
     font-size: 20px;
     text-align: center;
+    color: var(--secondary);
 }
 
 .picture-upload{
