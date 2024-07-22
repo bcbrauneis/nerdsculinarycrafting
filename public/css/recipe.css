@@ -1,0 +1,24 @@
+.cent {
+    text-align: center;
+  }
+  
+  .name{
+    text-decoration: underline;
+    font-size: 55px;
+    margin-bottom: 20px;
+  }
+  
+  .des {
+    margin: 5px 20%;
+    margin-bottom: 10px;
+    background-color: var(--li);
+    height: auto;
+    font-size: 30px;
+  }
+  
+  .res {
+    font-size: 30px;
+    background-color: var(--li);
+    margin: 0 20%;
+    height: auto;
+  }

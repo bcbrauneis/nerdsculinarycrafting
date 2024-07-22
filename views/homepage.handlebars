@@ -1,21 +1,32 @@
+<link rel="stylesheet" href="/css/homepage.css">
 <div class='hpcont'>
-    <h2 class="poptag">Popular Tags</h2>
+    <div>
+        <button class="new-recipe button-85 no-button" id="logout" type="button" href="/views/newrecipe.handlebars">Create New Recipe</button>
+    </div>
+    <div>
+        <h2 class="poptag">Popular Tags</h2>
+    </div>
     <div>
         <nav>
-            <button class="button-81">Star Wars</button>
-            <button class="button-81">Lord of the Rings</button>
-            <button class="button-81">Stardew Valley</button>
-            <button class="button-81">Final Fantasy</button>
-            <button class="button-81">Harry Potter</button>
-            <button class="button-81">Destiny</button>
-            <button class="button-81">Minecraft</button>
-            <button class="button-81">Studio Ghibli</button>
-            <button class="button-81">Monster Hunter</button>
+            <button type="button" class="button-81">Star Wars</button>
+            <button type="button" class="button-81">Lord of the Rings</button>
+            <button type="button" class="button-81">Stardew Valley</button>
+            <button type="button" class="button-81">Final Fantasy</button>
+            <button type="button" class="button-81">Harry Potter</button>
+            <button type="button" class="button-81">Destiny</button>
+            <button type="button" class="button-81">Minecraft</button>
+            <button type="button" class="button-81">Studio Ghibli</button>
+            <button type="button" class="button-81">Monster Hunter</button>
         </nav>
     </div>
     <div class="recipebg">
         <!-- Place holder for recipe of the week-->
-        <h1>Place Holder for recipe name</h1>
-        <h3>Place holder for recipe instructions</h3>
+        <h1>Recipe of the Week: {{{recipe.recipe_name}}}</h1>
+        <h3>{{{recipe.description}}}</h3>
+        <button class="my-button" id="my-button">Start Contest!</button>
+
     </div>
+   
 </div>
+
+<script src="./js/homepage.js"></script>
