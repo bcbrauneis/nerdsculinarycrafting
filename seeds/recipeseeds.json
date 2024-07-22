@@ -13,7 +13,9 @@
         "description": "the only thing to drink at the end of a hard day of spell casting",
         "ingredients": "1/2 c pumpkin, 1 cup apple juice, sprinkle of cinnamon",
         "instructions": "shake in a jar with ice and strain. serve with a pumpkin pastie",
-        "user_id" : 1,
+
+        "user_id" : 2,
+
         "theme_id" : 5,
         "isWinner": false
     }
