@@ -12,7 +12,7 @@ const withAuth = require('../utils/auth');
      });
   
        //Serialize data so the template can read it
-      const recipe = recipeData[0].get({ plain: true });
+      const recipe = recipeData.length > 0 ? recipeData[0].get({ plain: true }) : [];
 
       //Pass serialized data and session flag into template
       res.render('homepage', { 
@@ -20,6 +20,7 @@ const withAuth = require('../utils/auth');
        logged_in: req.session.logged_in 
       });
     } catch (err) {
+      //throw new Error(err);
      res.status(500).json(err);
     }
   });
