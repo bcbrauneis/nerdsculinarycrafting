@@ -18,5 +18,23 @@
 
         "theme_id" : 5,
         "isWinner": false
+    },
+    {
+        "recipe_name": "Farmers Lunch",
+        "description": "A meal to get you through even the toughest of cranberry harvests",
+        "ingredients": "1 fish, 1 pumpkin, 1 fiddlehead fern ",
+        "instructions": "saute everything in an cast iron pan on medium",
+        "user_id" : 2,
+        "theme_id" : 3,
+        "isWinner": false
+    },
+    {
+        "recipe_name": "Blue Milk",
+        "description": "you don't want to know where this came from",
+        "ingredients": "dunno, it just comes in the bottle",
+        "instructions": "chug it",
+        "user_id" : 2,
+        "theme_id" : 1,
+        "isWinner": false
     }
 ]
