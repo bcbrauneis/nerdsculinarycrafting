@@ -43,7 +43,7 @@ router.get('/count', async (req, res) => {
         }
     };
 
-    countdown('2024-07-21', '13:57:00', countdownCb);
+    countdown('2024-07-22', '18:57:00', countdownCb);
 
     res.status(200).json({ message: "countdown is running on server" });
 });
